@@ -10,7 +10,13 @@ public class Paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetPaddleSize();
+    }
+
+    void SetPaddleSize()
+    {
+        if(UserInfo.Instance.skillHard)
+            GameObject.FindWithTag("Paddle").transform.localScale = new Vector3(0.4f, .1f, 1f);
     }
 
     // Update is called once per frame

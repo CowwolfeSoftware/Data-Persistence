@@ -9,6 +9,8 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
+        if(UserInfo.Instance.skillHard)
+            transform.localScale = new Vector3(0.1875f * 2,1.5f, 0.15f);
         m_Rigidbody = GetComponent<Rigidbody>();
     }
     

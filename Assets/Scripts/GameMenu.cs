@@ -12,7 +12,8 @@ public class GameMenu : MonoBehaviour
 
     public void UpdateBestScore()
     {
-        bestScore.text = string.Format("Best Score : {0} : {1}", UserInfo.Instance.userName, UserInfo.Instance.highScore);
+        if(UserInfo.Instance != null)
+            bestScore.text = string.Format("Best Score : {0} : {1}", UserInfo.Instance.userName, UserInfo.Instance.highScore);
     }
 
     

@@ -10,6 +10,8 @@ public class UserInfo : MonoBehaviour
     public string userName;
     [HideInInspector]
     public int highScore;
+    [HideInInspector]
+    public bool skillHard;
 
     // Awake is called once when object is created.
     void Awake()
@@ -30,6 +32,7 @@ public class UserInfo : MonoBehaviour
     {
         public string userName;
         public int highScore;
+        public bool skillHard;
     }
 
     public void SaveGame()
@@ -37,6 +40,7 @@ public class UserInfo : MonoBehaviour
         SaveGameData data = new ();
         data.userName = userName;
         data.highScore = highScore;
+        data.skillHard = skillHard;
         var json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
@@ -51,6 +55,7 @@ public class UserInfo : MonoBehaviour
             SaveGameData data = JsonUtility.FromJson<SaveGameData>(json);
             userName = data.userName;
             highScore = data.highScore;
+            skillHard = data.skillHard;
         }
     }
 }
