@@ -72,5 +72,7 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        UserInfo.Instance.highScore = m_Points;
+        GameObject.Find("Canvas").GetComponent<GameMenu>().UpdateBestScore();
     }
 }
