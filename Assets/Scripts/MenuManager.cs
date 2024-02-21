@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -49,7 +50,13 @@ public class MenuManager : MonoBehaviour
     public void QuitGame()
     {
         UserInfo.Instance.SaveGame();
+
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
         Application.Quit();
+#endif
+
     }
     
 }

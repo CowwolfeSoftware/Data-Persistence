@@ -50,6 +50,7 @@ public class UserInfo : MonoBehaviour
             string json = File.ReadAllText(path);
             SaveGameData data = JsonUtility.FromJson<SaveGameData>(json);
             userName = data.userName;
+            highScore = data.highScore;
         }
     }
 }
